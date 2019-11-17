@@ -72,3 +72,7 @@ package-lock.json
 */.DS_Store
 
 frontend/src/index.css
+src/*
+public/*
+build/static/css/*.map
+build/static/js/*.map

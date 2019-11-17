@@ -1,0 +1,78 @@
+:root {
+    --fontSize: 1.8rem;
+    --fontSizeMin: .8rem;
+    --mainColor: #0f2b47;
+    --secondaryColor: #fff;
+    --baseline: 30px;
+}
+* {
+    box-sizing: border-box;
+}
+html {
+    overflow-x: hidden;
+    overflow-y: auto;
+    overflow: hidden auto;
+    font-size: 18px;
+}
+body {
+    background-color: var(--mainColor);
+    color: var(--secondaryColor);
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+    font-size: var(--fontSize);
+    line-height: calc(var(--fontSize) * 1.5);
+    overflow-wrap: break-word;
+    margin: 0;
+}
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+h1,h2,h3,h4,h5,h6 {
+    padding: var(--baseline);
+}
+a {
+    color: var(--white)
+}
+a:hover {
+        color: rebeccapurple;
+    }
+header h1 {
+        font-size: 1rem;
+        padding: var(--baseline);
+    }
+footer {
+    margin: var(--baseline);
+}
+footer p {
+        font-size: var(--fontSizeMin);
+    }
+.sharing-wrapper {
+
+    display: flex;
+    margin-left: var(--baseline);
+}
+.sharing-wrapper .btn {
+        display: inline-flex;
+        width: 50px;
+        height: 50px;
+        margin-right: var(--baseline);
+        border-radius: 50px;
+        padding: 10px
+    }
+.sharing-wrapper .btn:hover,
+        .sharing-wrapper .btn:focus {
+            background-color: var(--secondaryColor);
+        }
+.sharing-wrapper .btn:hover svg, .sharing-wrapper .btn:focus svg {
+                fill: var(--mainColor);
+            }
+.sharing-wrapper .btn svg {
+            width: 100%;
+            height: 100%;
+            fill: var(--secondaryColor);
+        }
+.sharing-wrapper .btn span {
+            display: none;
+        }

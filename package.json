@@ -1,30 +1,46 @@
 {
-  "name": "fala-campeao",
-  "version": "1.0.0",
-  "description": "POC de um serviço que gera nomes de garçons aleatórios em modo API rest. Baseado em https://twitter.com/NomesGarcom :nerd_face:",
-  "main": "server.js",
-  "scripts": {
-    "dev-client": "cd frontend/ && npm run start",
-    "dev-all": "nodemon server/server.js && cd frontend/ && npm run start",
-    "deploy": "https://www.freecodecamp.org/news/how-to-make-create-react-app-work-with-a-node-backend-api-7c5c48acb1b0/",
-    "dev-back": "nodemon server/server.js --ignore frontend/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/marcos-paiva/fala-campeao.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/marcos-paiva/fala-campeao/issues"
-  },
-  "homepage": "https://github.com/marcos-paiva/fala-campeao#readme",
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "axios": "^0.19.0",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0"
+  },
+  "scripts": {
+    "build:css": "postcss src/styles/main.css -o src/index.css",
+    "watch:css": "postcss src/styles/main.css -o src/index.css -w",
+    "start": "npm-run-all -p watch:css start-js",
+    "start-js": "react-scripts start",
+    "build-js": "react-scripts build",
+    "build": "npm-run-all build:css build-js",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
-    "nodemon": "^1.19.2"
+    "autoprefixer": "^9.6.4",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.1.3",
+    "postcss-import": "^12.0.1",
+    "postcss-nested": "^4.1.2",
+    "postcss-normalize": "^8.0.1",
+    "postcss-preset-env": "^6.7.0"
   }
 }

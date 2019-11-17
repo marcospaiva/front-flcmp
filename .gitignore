@@ -71,8 +71,7 @@ package-lock.json
 .DS_Store
 */.DS_Store
 
-frontend/src/index.css
-src/*
+src/index.css
 public/*
 build/static/css/*.map
 build/static/js/*.map

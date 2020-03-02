@@ -4,10 +4,8 @@ import Phrase from './Phrase';
 import SharingButtons from './SharingButtons';
 import Footer from './Footer';
 import api from './Api';
-import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
-
   const [phrase, setPhrase ] = useState([]);
 
   useEffect( () => {
@@ -19,8 +17,6 @@ function App() {
     }
     loadPhrases();
   }, []);
-
-
 
   return (
     <section className="app">

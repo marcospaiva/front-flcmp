@@ -5,27 +5,32 @@ import Footer from './Footer'
 import api from './Api'
 
 function App() {
-  const [phrase, setPhrase ] = useState([])
+    const [obj, setObj ] = useState(
+        {
+        "phrase": "Nomes de garçom"
+        }
+    )
 
-  useEffect( () => {
-    async function loadPhrases(){
-      const response = await api.get();
-      setPhrase(response.data);
+    document.title = obj.phrase
 
-      document.title = response.data
+    useEffect(() => {
+        async function loadObj(){
+        const response = await api.get()
+        setObj(response.data)
+        document.title = response.data.phrase
     }
-    loadPhrases();
-  }, []);
+    loadObj();
+    }, []);
 
-  return (
-    <>
-      <Header />
-      <main>
-        <Phrase phrase={phrase} />
-      </main>
-      <Footer />
-    </>
-  );
+    return (
+        <>
+        <Header />
+        <main>
+            <Phrase phrase={obj.phrase} />
+        </main>
+        <Footer />
+        </>
+    );
 }
 
 export default App;

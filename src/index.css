@@ -1,3 +1,21 @@
+@font-face {
+    font-family: 'HK Grotesk Wide';
+    src: url('/fonts/HKGroteskWide-Black.woff2') format('woff2'),
+        url('/fonts/HKGroteskWide-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'HK Grotesk Wide';
+    src: url('/fonts/HKGroteskWide-light.woff2') format('woff2'),
+        url('/fonts/HKGroteskWide-light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     --fontSize: 1.8rem;
     --fontSizeMin: .8rem;
@@ -5,74 +23,86 @@
     --secondaryColor: #fff;
     --baseline: 30px;
 }
+
 * {
     box-sizing: border-box;
 }
+
 html {
     overflow-x: hidden;
     overflow-y: auto;
     overflow: hidden auto;
     font-size: 18px;
 }
+
 body {
-    background-color: var(--mainColor);
-    color: var(--secondaryColor);
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+    font-family: 'HK Grotesk Wide';
     font-size: var(--fontSize);
+    font-weight: 300;
+    color: var(--secondaryColor);
+    background-color: var(--mainColor);
     line-height: calc(var(--fontSize) * 1.5);
     overflow-wrap: break-word;
     margin: 0;
 }
-.app {
+
+#root {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    min-height: 100vh;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
 }
-h1,h2,h3,h4,h5,h6 {
-    padding: var(--baseline);
+
+h1 {
+    font-size: 2.8em;
+    font-weight: 900;
+    margin:0 var(--baseline);
+    /* -webkit-text-stroke: 1px var(--secondaryColor);
+    -webkit-text-fill-color: transparent; */
 }
+
 a {
     color: var(--white)
 }
+
 a:hover {
         color: rebeccapurple;
     }
-header h1 {
-        font-size: 1rem;
-        padding: var(--baseline);
-    }
-footer {
-    margin: var(--baseline);
+
+text {
+    text-align: center;
+    fill: #fff;
+    letter-spacing: 6px;
+    font-size: 1rem;
 }
+
+.logo {
+    width: 100px;
+    height: 100px;
+    display: block;
+    position: absolute;
+    top: var(--baseline);
+    right: var(--baseline);
+    overflow: visible;
+    animation-name: rotate;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+footer {
+    position: absolute;
+    bottom: var(--baseline);
+}
+
 footer p {
         font-size: var(--fontSizeMin);
+        line-height: 1;
+        margin: 0;
     }
-.sharing-wrapper {
 
-    display: flex;
-    margin-left: var(--baseline);
+@keyframes rotate {
+  from { transform: rotate(0deg) }
+  to   { transform: rotate(360deg); }
 }
-.sharing-wrapper .btn {
-        display: inline-flex;
-        width: 50px;
-        height: 50px;
-        margin-right: var(--baseline);
-        border-radius: 50px;
-        padding: 10px
-    }
-.sharing-wrapper .btn:hover,
-        .sharing-wrapper .btn:focus {
-            background-color: var(--secondaryColor);
-        }
-.sharing-wrapper .btn:hover svg, .sharing-wrapper .btn:focus svg {
-                fill: var(--mainColor);
-            }
-.sharing-wrapper .btn svg {
-            width: 100%;
-            height: 100%;
-            fill: var(--secondaryColor);
-        }
-.sharing-wrapper .btn span {
-            display: none;
-        }

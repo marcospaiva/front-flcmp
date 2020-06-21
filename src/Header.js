@@ -1,15 +1,18 @@
-import React from 'react';
+import React from 'react'
 
-// Header is a stateless component
 const Header = () => {
+
     return (
-        <header>
-            <h1>
-                <span role="img" aria-label="Hello">👋</span>
-                Bem-vindx ao Fala Campeão
-            </h1>
-        </header>
+        <svg viewBox="0 0 100 100" className="logo">
+            <path id="curve" fill="transparent" d="M0,50a50,50 0 1,0 100,0a50,50 0 1,0 -100,0" />
+            <text alignment-baseline="baseline">
+                <textPath xlinkHref="#curve">
+                    nomes de garçom.
+                </textPath>
+            </text>
+        </svg>
     );
-};
+
+}
 
 export default Header;

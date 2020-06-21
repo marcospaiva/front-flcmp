@@ -16,6 +16,32 @@
     font-display: swap;
 }
 
+.logo {
+    width: 100px;
+    height: 100px;
+    display: block;
+    position: absolute;
+    top: var(--baseline);
+    right: var(--baseline);
+    overflow: visible;
+    animation-name: rotate;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.logo text {
+    text-align: center;
+    fill: #fff;
+    letter-spacing: 6px;
+    font-size: 1rem;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg) }
+    to   { transform: rotate(360deg); }
+}
+
 :root {
     --fontSize: 1.8rem;
     --fontSizeMin: .8rem;
@@ -70,30 +96,10 @@ a:hover {
         color: rebeccapurple;
     }
 
-text {
-    text-align: center;
-    fill: #fff;
-    letter-spacing: 6px;
-    font-size: 1rem;
-}
-
-.logo {
-    width: 100px;
-    height: 100px;
-    display: block;
-    position: absolute;
-    top: var(--baseline);
-    right: var(--baseline);
-    overflow: visible;
-    animation-name: rotate;
-    animation-duration: 10s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-
 footer {
     position: absolute;
     bottom: var(--baseline);
+    left: var(--baseline);
 }
 
 footer p {
@@ -101,8 +107,3 @@ footer p {
         line-height: 1;
         margin: 0;
     }
-
-@keyframes rotate {
-  from { transform: rotate(0deg) }
-  to   { transform: rotate(360deg); }
-}

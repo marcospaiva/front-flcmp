@@ -1,0 +1,25 @@
+.logo {
+    width: 100px;
+    height: 100px;
+    display: block;
+    position: absolute;
+    top: var(--baseline);
+    right: var(--baseline);
+    overflow: visible;
+    animation-name: rotate;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.logo text {
+    text-align: center;
+    fill: #fff;
+    letter-spacing: 6px;
+    font-size: 1rem;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg) }
+    to   { transform: rotate(360deg); }
+}

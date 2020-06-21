@@ -1,20 +1,5 @@
-@font-face {
-    font-family: 'HK Grotesk Wide';
-    src: url('/fonts/HKGroteskWide-Black.woff2') format('woff2'),
-        url('/fonts/HKGroteskWide-Black.woff') format('woff');
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'HK Grotesk Wide';
-    src: url('/fonts/HKGroteskWide-light.woff2') format('woff2'),
-        url('/fonts/HKGroteskWide-light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
+@import './fonts.css';
+@import './header.css';
 
 @custom-media --viewport-medium (width <= 50rem);
 
@@ -70,40 +55,14 @@ a {
     }
 }
 
-text {
-    text-align: center;
-    fill: #fff;
-    letter-spacing: 6px;
-    font-size: 1rem;
-}
-
-.logo {
-    width: 100px;
-    height: 100px;
-    display: block;
-    position: absolute;
-    top: var(--baseline);
-    right: var(--baseline);
-    overflow: visible;
-    animation-name: rotate;
-    animation-duration: 10s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-
-
 footer {
     position: absolute;
     bottom: var(--baseline);
+    left: var(--baseline);
 
     p {
         font-size: var(--fontSizeMin);
         line-height: 1;
         margin: 0;
     }
-}
-
-@keyframes rotate {
-  from { transform: rotate(0deg) }
-  to   { transform: rotate(360deg); }
 }

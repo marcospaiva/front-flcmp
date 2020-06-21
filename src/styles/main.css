@@ -1,2 +1,109 @@
-@import 'styles.css';
-@import 'sharing-buttons.css';
+@font-face {
+    font-family: 'HK Grotesk Wide';
+    src: url('/fonts/HKGroteskWide-Black.woff2') format('woff2'),
+        url('/fonts/HKGroteskWide-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'HK Grotesk Wide';
+    src: url('/fonts/HKGroteskWide-light.woff2') format('woff2'),
+        url('/fonts/HKGroteskWide-light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@custom-media --viewport-medium (width <= 50rem);
+
+:root {
+    --fontSize: 1.8rem;
+    --fontSizeMin: .8rem;
+    --mainColor: #0f2b47;
+    --secondaryColor: #fff;
+    --baseline: 30px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    overflow: hidden auto;
+    font-size: 18px;
+}
+
+body {
+    font-family: 'HK Grotesk Wide';
+    font-size: var(--fontSize);
+    font-weight: 300;
+    color: var(--secondaryColor);
+    background-color: var(--mainColor);
+    line-height: calc(var(--fontSize) * 1.5);
+    overflow-wrap: break-word;
+    margin: 0;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+h1 {
+    font-size: 2.8em;
+    font-weight: 900;
+    margin:0 var(--baseline);
+    /* -webkit-text-stroke: 1px var(--secondaryColor);
+    -webkit-text-fill-color: transparent; */
+}
+
+a {
+    color: var(--white);
+
+    &:hover {
+        color: rebeccapurple;
+    }
+}
+
+text {
+    text-align: center;
+    fill: #fff;
+    letter-spacing: 6px;
+    font-size: 1rem;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    display: block;
+    position: absolute;
+    top: var(--baseline);
+    right: var(--baseline);
+    overflow: visible;
+    animation-name: rotate;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+footer {
+    position: absolute;
+    bottom: var(--baseline);
+
+    p {
+        font-size: var(--fontSizeMin);
+        line-height: 1;
+        margin: 0;
+    }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg) }
+  to   { transform: rotate(360deg); }
+}

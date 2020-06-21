@@ -12,7 +12,6 @@ const Header = () => {
             </text>
         </svg>
     );
-
 }
 
 export default Header;

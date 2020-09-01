@@ -8,6 +8,7 @@
     "express": "^4.17.1",
     "express-favicon": "^2.0.1",
     "path": "^0.12.7",
+    "postcss-for": "^2.1.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-router-dom": "^5.1.2",

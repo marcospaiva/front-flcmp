@@ -4,9 +4,7 @@ import React from 'react'
 class Phrase extends React.Component{
     render() {
         return(
-            <h1>
-                {this.props.phrase}
-            </h1>
+            <h1>{this.props.phrase}</h1>
         )
     }
 }

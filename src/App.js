@@ -3,6 +3,7 @@ import Phrase from './Phrase'
 import Header from './Header'
 import Footer from './Footer'
 import api from './Api'
+import Background from './Background'
 
 function App() {
     const [obj, setObj ] = useState(
@@ -15,10 +16,10 @@ function App() {
 
     useEffect(() => {
         async function loadObj(){
-        const response = await api.get()
-        setObj(response.data)
-        document.title = response.data.phrase
-    }
+            const response = await api.get()
+            setObj(response.data)
+            document.title = response.data.phrase
+        }
     loadObj();
     }, []);
 
@@ -28,6 +29,7 @@ function App() {
         <main>
             <Phrase phrase={obj.phrase} />
         </main>
+        <Background phrase={obj.phraseOtherGender}/>
         <Footer />
         </>
     );

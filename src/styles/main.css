@@ -29,6 +29,9 @@ body {
     line-height: calc(var(--fontSize) * 1.5);
     overflow-wrap: break-word;
     margin: 0;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
 }
 
 #root {
@@ -42,9 +45,32 @@ body {
 h1 {
     font-size: 2.8em;
     font-weight: 900;
+    line-height: 1;
     margin:0 var(--baseline);
-    /* -webkit-text-stroke: 1px var(--secondaryColor);
-    -webkit-text-fill-color: transparent; */
+}
+
+.marquee {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.toRepeat {
+    font-size: 5rem;
+    width: 300vw;
+    font-weight: 900;
+    line-height: 1;
+    -webkit-text-stroke: 1px var(--secondaryColor);
+    -webkit-text-fill-color: transparent;
+    position: absolute;
+    transform: rotateZ(-10deg);
+    margin: 0;
+}
+
+@for $i from 1 to 5 {
+    .toRepeat-$i { top: calc( 10 * $(i)rem); }
 }
 
 a {

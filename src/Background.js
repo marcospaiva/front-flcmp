@@ -1,19 +1,21 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 
-function Background() {
-    useEffect(() => {
-        function duplicate(){
-            const w = window.innerWidth
-            const h = window.innerHeight
-            const elWidth = document.getElementsByTagName('h4').innerWidth
-            const elHeight = document.getElementsByTagName('h4').innerHeight
+class Background extends React.Component {
+    render() {
+        const items = []
+        for(let i=0; i<5; i++){
+            items.push(i)
         }
-        duplicate()
-    }, [])
-
-    return(
-        <h4 className="toRepeat">nomes de garçom</h4>
-    )
+        return(
+            <>
+            <div className="marquee" aria-hidden="true">
+            {items.map((item)=>{
+                return (<span className={`toRepeat toRepeat-${item}`} key={item}>{this.props.phrase}</span>)
+            })}
+            </div>
+            </>
+        )
+    }
 }
 
 export default Background

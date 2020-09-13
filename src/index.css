@@ -63,13 +63,16 @@ html {
 
 body {
     font-family: 'HK Grotesk Wide';
-    font-size: var(--fontSize);
+    font-size:5vmin;
     font-weight: 300;
     color: var(--secondaryColor);
     background-color: var(--mainColor);
     line-height: calc(var(--fontSize) * 1.5);
     overflow-wrap: break-word;
     margin: 0;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
 }
 
 #root {
@@ -78,15 +81,47 @@ body {
     justify-content: center;
     height: 100vh;
     width: 100vw;
+    overflow: hidden;
 }
 
 h1 {
-    font-size: 2.8em;
+    font-size: 5rem;
     font-weight: 900;
+    line-height: 1;
     margin:0 var(--baseline);
-    /* -webkit-text-stroke: 1px var(--secondaryColor);
-    -webkit-text-fill-color: transparent; */
 }
+
+.marquee {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.toRepeat {
+    font-size: 5rem;
+    width: 300vw;
+    font-weight: 900;
+    line-height: 1;
+    -webkit-text-stroke: 1px var(--secondaryColor);
+    -webkit-text-fill-color: transparent;
+    position: absolute;
+    transform-origin: left top;
+    transform: rotateZ(-10deg);
+    margin: 0;
+    top: 0;
+}
+
+.toRepeat-1 { top: calc( 10 * 1rem); }
+
+.toRepeat-2 { top: calc( 10 * 2rem); }
+
+.toRepeat-3 { top: calc( 10 * 3rem); }
+
+.toRepeat-4 { top: calc( 10 * 4rem); }
+
+.toRepeat-5 { top: calc( 10 * 5rem); }
 
 a {
     color: var(--white)

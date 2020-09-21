@@ -59,8 +59,8 @@ h1 {
 }
 
 .toRepeat {
-    font-size: 5rem;
-    width: 300vw;
+    font-size: 7vw;
+    width: 100vw;
     font-weight: 900;
     line-height: 1;
     -webkit-text-stroke: 1px var(--secondaryColor);

@@ -3,9 +3,10 @@ import React from 'react'
 class Background extends React.Component {
     render() {
         const items = []
-        for(let i=0; i<5; i++){
+        for( let i=0; i<5; i++ ){
             items.push(i)
         }
+        console.log(window.innerWidth);
         return(
             <>
             <div className="marquee" aria-hidden="true">

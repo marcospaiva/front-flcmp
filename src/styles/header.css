@@ -14,7 +14,7 @@
 
 .logo text {
     text-align: center;
-    fill: #fff;
+    fill: var(--secondaryColor);
     letter-spacing: 6px;
     font-size: 1rem;
 }

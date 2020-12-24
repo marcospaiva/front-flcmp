@@ -6,8 +6,8 @@
 :root {
     --fontSize: 1.8rem;
     --fontSizeMin: .8rem;
-    --mainColor: #0f2b47;
-    --secondaryColor: #fff;
+    --mainColor: #00ffa2;
+    --secondaryColor: #0f2b47;
     --baseline: 30px;
 }
 
@@ -60,20 +60,21 @@ h1 {
 
 .toRepeat {
     font-size: 7vw;
-    width: 100vw;
     font-weight: 900;
     line-height: 1;
     -webkit-text-stroke: 1px var(--secondaryColor);
     -webkit-text-fill-color: transparent;
     position: absolute;
     transform-origin: left top;
-    transform: rotateZ(-10deg);
     margin: 0;
-    top: 0;
 }
 
-@for $i from 1 to 5 {
-    .toRepeat-$i { top: calc( 10 * $(i)rem); }
+@for $i from 0 to 2 {
+    .toRepeat-$i {
+        transform: rotateZ(var(--rotateItem));
+        top: var(--topItem);
+        left: var(--leftItem);
+    }
 }
 
 a {

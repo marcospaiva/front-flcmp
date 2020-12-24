@@ -32,7 +32,7 @@
 
 .logo text {
     text-align: center;
-    fill: #fff;
+    fill: var(--secondaryColor);
     letter-spacing: 6px;
     font-size: 1rem;
 }
@@ -45,8 +45,8 @@
 :root {
     --fontSize: 1.8rem;
     --fontSizeMin: .8rem;
-    --mainColor: #0f2b47;
-    --secondaryColor: #fff;
+    --mainColor: #00ffa2;
+    --secondaryColor: #0f2b47;
     --baseline: 30px;
 }
 
@@ -101,27 +101,32 @@ h1 {
 
 .toRepeat {
     font-size: 7vw;
-    width: 100vw;
     font-weight: 900;
     line-height: 1;
     -webkit-text-stroke: 1px var(--secondaryColor);
     -webkit-text-fill-color: transparent;
     position: absolute;
     transform-origin: left top;
-    transform: rotateZ(-10deg);
     margin: 0;
-    top: 0;
 }
 
-.toRepeat-1 { top: calc( 10 * 1rem); }
+.toRepeat-0 {
+        transform: rotateZ(var(--rotateItem));
+        top: var(--topItem);
+        left: var(--leftItem);
+    }
 
-.toRepeat-2 { top: calc( 10 * 2rem); }
+.toRepeat-1 {
+        transform: rotateZ(var(--rotateItem));
+        top: var(--topItem);
+        left: var(--leftItem);
+    }
 
-.toRepeat-3 { top: calc( 10 * 3rem); }
-
-.toRepeat-4 { top: calc( 10 * 4rem); }
-
-.toRepeat-5 { top: calc( 10 * 5rem); }
+.toRepeat-2 {
+        transform: rotateZ(var(--rotateItem));
+        top: var(--topItem);
+        left: var(--leftItem);
+    }
 
 a {
     color: var(--white)

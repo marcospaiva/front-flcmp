@@ -8,6 +8,9 @@ import Background from './Background'
 import image from './images/ico.ico'
 import og_image from './images/og-image.jpg'
 
+ReactGA.initialize(process.env.REACT_GOOGLE_ANALYTICS)
+ReactGA.pageview(window.location.pathname + window.location.search)
+
 function App() {
     const [obj, setObj ] = useState({})
 

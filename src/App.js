@@ -10,8 +10,6 @@ function App() {
 
     function handleAnimationPlay() {
         const svgBottles = document.querySelector('.bottle')
-        const wrapper = document.querySelector('.logoWrapper')
-        const background = document.querySelector('.marquee')
 
         svgBottles.classList.add('isAnimated')
     }

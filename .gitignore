@@ -75,3 +75,4 @@ src/index.css
 public/*
 build/static/css/*.map
 build/static/js/*.map
+src/index.css

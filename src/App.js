@@ -6,21 +6,45 @@ import api from './Api'
 import Background from './Background'
 
 function App() {
-    const [obj, setObj ] = useState(
-        {
-        "phrase": "Nomes de garçom"
-        }
-    )
+    const [obj, setObj ] = useState({})
 
-    document.title = obj.phrase
+    function handleAnimationPlay() {
+        const svgBottles = document.querySelector('.bottle')
+        const wrapper = document.querySelector('.logoWrapper')
+        const background = document.querySelector('.marquee')
+
+        svgBottles.classList.add('isAnimated')
+    }
+
+    function handleAnimationComplete() {
+        const svgBottles = document.querySelector('.bottle')
+        const wrapper = document.querySelector('.logoWrapper')
+        const background = document.querySelector('.marquee')
+        const main = document.querySelector('h1')
+
+        svgBottles.classList.remove('isAnimated')
+        wrapper.classList.remove('preloading')
+
+        setTimeout(function(){
+            background.classList.add('loaded')
+        },500)
+
+        setTimeout(function(){
+            main.classList.add('loaded')
+        },1000)
+    }
 
     useEffect(() => {
+        handleAnimationPlay()
         async function loadObj(){
             const response = await api.get()
-            setObj(response.data)
-            document.title = response.data.phrase
+            setTimeout(function(){
+                setObj(response.data)
+                document.title = response.data.phrase
+                handleAnimationComplete()
+            },3000)
         }
-    loadObj();
+        loadObj();
     }, []);
 
     return (

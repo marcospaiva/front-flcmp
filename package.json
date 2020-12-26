@@ -8,17 +8,15 @@
     "express": "^4.17.1",
     "express-favicon": "^2.0.1",
     "path": "^0.12.7",
-    "postcss-for": "^2.1.1",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1"
   },
   "scripts": {
     "build:css": "postcss src/styles/main.css -o src/index.css",
     "watch:css": "postcss src/styles/main.css -o src/index.css -w",
-    "start": "node server.js",
-    "starting": "npm-run-all -p watch:css start-js",
+    "dev": "npm-run-all -p watch:css start-js",
     "start-js": "react-scripts start watch:css",
     "build-js": "react-scripts build",
     "build": "npm-run-all build:css build-js",
@@ -47,6 +45,9 @@
     "postcss-import": "^12.0.1",
     "postcss-nested": "^4.1.2",
     "postcss-normalize": "^8.0.1",
-    "postcss-preset-env": "^6.7.0"
+    "postcss-preset-env": "^6.7.0",
+    "postcss-for": "^2.1.1",
+    "postcss-jsmath": "0.0.83",
+    "postcss-random": "^1.0.9"
   }
 }

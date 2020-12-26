@@ -6,6 +6,8 @@ module.exports = {
         }),
         require('postcss-nested'),
         require('postcss-for'),
+        require('postcss-random'),
+        require('postcss-jsmath'),
         require('autoprefixer'),
     ],
 };

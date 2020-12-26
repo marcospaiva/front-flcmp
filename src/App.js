@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import ReactGA from 'react-ga'
 import {Helmet} from "react-helmet"
 import Phrase from './Phrase'
 import Header from './Header'
@@ -49,6 +50,12 @@ function App() {
                 document.title = response.data.phrase
                 handleAnimationComplete()
             },3000)
+
+            ReactGA.event({
+                category: 'User',
+                action: 'Phrase',
+                label: response.data.phrase
+            });
         }
         loadObj();
     }, []);

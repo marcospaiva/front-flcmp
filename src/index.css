@@ -20,6 +20,7 @@
     animation-duration: 10s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+    overflow: visible;
 }
 
 .logo text {
@@ -64,6 +65,15 @@
     animation-name: rotateLeft;
 }
 
+.bottle .tada {
+    transform: rotate(-25deg);
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-name: tada;
+    opacity: 0;
+}
+
 @keyframes rotate {
     from { transform: rotate(0deg) }
     to   { transform: rotate(360deg); }
@@ -87,7 +97,7 @@
     }
 }
 
-@keyframes rotateLeft{
+@keyframes rotateLeft {
     0% {
         transform: rotate(0) translateY(0px);
     }
@@ -102,6 +112,20 @@
 
     60% {
         transform: rotate(0) translateY(0);
+    }
+}
+
+@keyframes tada {
+    8% {
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 0;
     }
 }
 
@@ -171,7 +195,7 @@ h4 {
 
 .marquee {
     position: fixed;
-    top: 0;
+    top: -150px;
     bottom: 0;
     left: 0;
     right: 0;

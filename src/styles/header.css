@@ -1,4 +1,4 @@
-.logo {
+.logoWrapper {
     width: 100px;
     height: 100px;
     display: block;
@@ -6,6 +6,16 @@
     top: var(--baseline);
     right: var(--baseline);
     overflow: visible;
+}
+
+.logoWrapper.preloading {
+    top: 50%;
+    margin-top: -50px;
+    left: 50%;
+    margin-left: -50px;
+}
+
+.logo {
     animation-name: rotate;
     animation-duration: 10s;
     animation-timing-function: linear;
@@ -19,7 +29,78 @@
     font-size: 1rem;
 }
 
+.bottle {
+    position: absolute;
+    width: 60px;
+    height: 40px;
+    left: math(40/2)px;
+    top: math(60/2)px;
+    overflow: visible;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+}
+
+.logoWrapper.preloading .bottle {
+    opacity: 1;
+}
+
+.bottle .bottlePath {
+    position: absolute;
+    fill: var(--secondaryColor);
+    transform-origin: bottom center;
+}
+
+.bottle.isAnimated .bottlePath {
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+}
+
+.bottle .bottleOne {
+    animation-name: rotateRight;
+}
+
+.bottle .bottleTwo {
+    animation-name: rotateLeft;
+}
+
 @keyframes rotate {
     from { transform: rotate(0deg) }
     to   { transform: rotate(360deg); }
+}
+
+@keyframes rotateRight {
+    0% {
+        transform: rotate(0) translateY(0px)
+    }
+
+    15% {
+        transform: rotate(10deg) translateY(-3px);
+    }
+
+    30% {
+        transform: rotate(8deg) translateY(-2px);
+    }
+
+    60% {
+        transform: rotate(0) translateY(0);
+    }
+}
+
+@keyframes rotateLeft{
+    0% {
+        transform: rotate(0) translateY(0px);
+    }
+
+    15% {
+        transform: rotate(-4deg) translateY(-10px);
+    }
+
+    30% {
+        transform: rotate(-5deg) translateY(-9px);
+    }
+
+    60% {
+        transform: rotate(0) translateY(0);
+    }
 }

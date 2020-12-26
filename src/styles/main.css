@@ -11,7 +11,6 @@
     --rotateItem: 90;
     --topItem: 200;
     --leftItem: 200;
-
 }
 
 * {
@@ -53,6 +52,16 @@ h1 {
     margin:0 var(--baseline);
     position: relative;
     z-index: 1000;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+}
+
+h1.loaded {
+    opacity: 1;
+}
+
+h4 {
+    font-weight: 300;
 }
 
 .marquee {
@@ -63,6 +72,12 @@ h1 {
     right: 0;
     z-index: 0;
     user-select: none;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+}
+
+.marquee.loaded {
+    opacity: 1;
 }
 
 .toRepeat {
@@ -107,8 +122,4 @@ footer {
         line-height: 1;
         margin: 0;
     }
-}
-
-h4 {
-    font-weight: 300;
 }

@@ -1,9 +1,12 @@
 import React, {useState, useEffect} from 'react'
+import {Helmet} from "react-helmet"
 import Phrase from './Phrase'
 import Header from './Header'
 import Footer from './Footer'
 import api from './Api'
 import Background from './Background'
+import image from './images/ico.ico'
+import og_image from './images/og-image.jpg'
 
 function App() {
     const [obj, setObj ] = useState({})
@@ -32,6 +35,8 @@ function App() {
         },1000)
     }
 
+    const url = window.location.href;
+
     useEffect(() => {
         handleAnimationPlay()
         async function loadObj(){
@@ -47,6 +52,17 @@ function App() {
 
     return (
         <>
+        <Helmet>
+            <title>🍻 Nomes de garçom 🍻</title>
+            <link rel="icon" href={image} type="image/x-icon"/>
+            <meta name="description" content="Uma coleção de frases tipicamente brasileiras para chamar garçons" />
+            <meta name="og:description" content="Uma coleção de frases tipicamente brasileiras para chamar garçons" />
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content="🍻 Nomes de garçom 🍻" />
+            <meta property="og:image" content={og_image} />
+            <meta property="og:url" content={url} />
+            <link rel="canonical" href={url}/>
+        </Helmet>
         <Header />
         <main>
             <Phrase phrase={obj.phrase} />

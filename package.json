@@ -8,8 +8,6 @@
     "express": "^4.17.1",
     "express-favicon": "^2.0.1",
     "path": "^0.12.7",
-    "postcss-for": "^2.1.1",
-    "postcss-random": "^1.0.9",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
@@ -47,6 +45,9 @@
     "postcss-import": "^12.0.1",
     "postcss-nested": "^4.1.2",
     "postcss-normalize": "^8.0.1",
-    "postcss-preset-env": "^6.7.0"
+    "postcss-preset-env": "^6.7.0",
+    "postcss-for": "^2.1.1",
+    "postcss-jsmath": "0.0.83",
+    "postcss-random": "^1.0.9"
   }
 }

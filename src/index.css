@@ -175,7 +175,19 @@ body {
 }
 
 h1 {
-    font-size: 6rem;
+    font-size: 13vw;
+}
+
+@media(min-width:40.063em) {
+
+h1 {
+        font-size: 9vw;
+}
+    }
+
+h1 {
+    -webkit-hyphens: auto;
+            hyphens: auto;
     font-weight: 900;
     line-height: 1;
     margin:0 var(--baseline);
@@ -222,71 +234,127 @@ h4 {
     text-align: left;
     position: absolute;
     display: block;
+    font-size: 35vw
 }
 
-.toRepeat-1 {
-        transform: rotateZ(-15deg);
-        top: 10rem;
-        left: -30px;
-        font-size: 10rem;
-        text-indent: -1.0566rem;
+@media(min-width:40.063em) {
+
+.toRepeat {
+        font-size: 10rem
+}
     }
+
+.toRepeat-1 {
+        left: -30px;
+        transform: rotateZ(-15deg);
+        top: 35vw;
+        text-indent: -2rem
+    }
+
+@media(min-width:40.063em) {
+    .toRepeat-1 {
+            top: 10rem;
+            text-indent: -4rem
+    }
+        }
 
 .toRepeat-2 {
-        transform: rotateZ(-15deg);
-        top: 20rem;
         left: -30px;
-        font-size: 10rem;
-        text-indent: -7.094200000000001rem;
+        transform: rotateZ(-15deg);
+        top: 70vw;
+        text-indent: -10rem
     }
+
+@media(min-width:40.063em) {
+    .toRepeat-2 {
+            top: 20rem;
+            text-indent: -10rem
+    }
+        }
 
 .toRepeat-3 {
-        transform: rotateZ(-15deg);
-        top: 30rem;
         left: -30px;
-        font-size: 10rem;
-        text-indent: -8.20155rem;
+        transform: rotateZ(-15deg);
+        top: 105vw;
+        text-indent: -24rem
     }
+
+@media(min-width:40.063em) {
+    .toRepeat-3 {
+            top: 30rem;
+            text-indent: -0rem
+    }
+        }
 
 .toRepeat-4 {
-        transform: rotateZ(-15deg);
-        top: 40rem;
         left: -30px;
-        font-size: 10rem;
-        text-indent: -14.776rem;
+        transform: rotateZ(-15deg);
+        top: 140vw;
+        text-indent: -12rem
     }
+
+@media(min-width:40.063em) {
+    .toRepeat-4 {
+            top: 40rem;
+            text-indent: -20rem
+    }
+        }
 
 .toRepeat-5 {
-        transform: rotateZ(-15deg);
-        top: 50rem;
         left: -30px;
-        font-size: 10rem;
-        text-indent: -20.48675rem;
+        transform: rotateZ(-15deg);
+        top: 175vw;
+        text-indent: -45rem
     }
+
+@media(min-width:40.063em) {
+    .toRepeat-5 {
+            top: 50rem;
+            text-indent: -15rem
+    }
+        }
 
 .toRepeat-6 {
-        transform: rotateZ(-15deg);
-        top: 60rem;
         left: -30px;
-        font-size: 10rem;
-        text-indent: -1.9035000000000002rem;
+        transform: rotateZ(-15deg);
+        top: 210vw;
+        text-indent: -6rem
     }
+
+@media(min-width:40.063em) {
+    .toRepeat-6 {
+            top: 60rem;
+            text-indent: -24rem
+    }
+        }
 
 .toRepeat-7 {
-        transform: rotateZ(-15deg);
-        top: 70rem;
         left: -30px;
-        font-size: 10rem;
-        text-indent: -13.1278rem;
+        transform: rotateZ(-15deg);
+        top: 245vw;
+        text-indent: -42rem
     }
 
-.toRepeat-8 {
-        transform: rotateZ(-15deg);
-        top: 80rem;
-        left: -30px;
-        font-size: 10rem;
-        text-indent: -33.754400000000004rem;
+@media(min-width:40.063em) {
+    .toRepeat-7 {
+            top: 70rem;
+            text-indent: -14rem
     }
+        }
+
+.toRepeat-8 {
+        left: -30px;
+        transform: rotateZ(-15deg);
+        top: 280vw;
+        text-indent: -40rem
+    }
+
+@media(min-width:40.063em) {
+    .toRepeat-8 {
+            top: 80rem;
+            text-indent: -0rem
+    }
+        }
 
 a {
     color: var(--white)

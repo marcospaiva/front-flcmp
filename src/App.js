@@ -65,7 +65,7 @@ function App() {
             <meta name="description" content="Uma coleção de frases tipicamente brasileiras para chamar garçons" />
             <meta name="og:description" content="Uma coleção de frases tipicamente brasileiras para chamar garçons" />
             <meta property="og:type" content="website" />
-            <meta property="og:title" content="🍻 Nomes de garçom 🍻" />
+            <meta property="og:title" content="Nomes de garçom 🍻" />
             <meta property="og:image" content={process.env.REACT_APP_PUBLIC_URL + og_image} />
             <meta property="og:url" content={process.env.REACT_APP_PUBLIC_URL} />
             <link rel="canonical" href={process.env.REACT_APP_PUBLIC_URL}/>

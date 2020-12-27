@@ -9,8 +9,8 @@ import Background from './Background'
 import image from './images/ico.ico'
 import og_image from './images/og-image.jpg'
 
-ReactGA.initialize(process.env.REACT_GOOGLE_ANALYTICS)
-ReactGA.pageview(window.location.pathname + window.location.search)
+ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS)
+ReactGA.pageview(process.env.REACT_APP_PUBLIC_URL)
 
 function App() {
     const [obj, setObj ] = useState({})
@@ -39,15 +39,13 @@ function App() {
         },1000)
     }
 
-    const url = window.location.href;
-
     useEffect(() => {
         handleAnimationPlay()
         async function loadObj(){
             const response = await api.get()
             setTimeout(function(){
                 setObj(response.data)
-                document.title = response.data.phrase
+                document.title = `${response.data.phrase} 🍻`
                 handleAnimationComplete()
             },3000)
 
@@ -59,19 +57,18 @@ function App() {
         }
         loadObj();
     }, []);
-
     return (
         <>
         <Helmet>
             <title>🍻 Nomes de garçom 🍻</title>
-            <link rel="icon" href={image} type="image/x-icon"/>
+            <link rel="icon" href={process.env.REACT_APP_PUBLIC_URL + image} type="image/x-icon"/>
             <meta name="description" content="Uma coleção de frases tipicamente brasileiras para chamar garçons" />
             <meta name="og:description" content="Uma coleção de frases tipicamente brasileiras para chamar garçons" />
             <meta property="og:type" content="website" />
             <meta property="og:title" content="🍻 Nomes de garçom 🍻" />
-            <meta property="og:image" content={og_image} />
-            <meta property="og:url" content={url} />
-            <link rel="canonical" href={url}/>
+            <meta property="og:image" content={process.env.REACT_APP_PUBLIC_URL + og_image} />
+            <meta property="og:url" content={process.env.REACT_APP_PUBLIC_URL} />
+            <link rel="canonical" href={process.env.REACT_APP_PUBLIC_URL}/>
         </Helmet>
         <Header />
         <main>

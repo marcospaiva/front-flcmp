@@ -1,13 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import ReactGA from 'react-ga'
-import {Helmet} from "react-helmet"
 import Phrase from './Phrase'
 import Header from './Header'
 import Footer from './Footer'
 import api from './Api'
 import Background from './Background'
-import image from './images/ico.ico'
-import og_image from './images/og-image.jpg'
 
 ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS)
 ReactGA.pageview(process.env.REACT_APP_PUBLIC_URL)
@@ -59,17 +56,6 @@ function App() {
     }, []);
     return (
         <>
-        <Helmet>
-            <title>Nomes de garçom 🍻</title>
-            <link rel="icon" href={process.env.REACT_APP_PUBLIC_URL + image} type="image/x-icon"/>
-            <meta name="description" content="Expressões brasileiras aleatórias para chamar o garçom, inspiradas em https://twitter.com/NomesGarcom :nerd_face:" />
-            <meta property="og:description" content="Expressões brasileiras aleatórias para chamar o garçom, inspiradas em https://twitter.com/NomesGarcom :nerd_face:" />
-            <meta property="og:type" content="website" />
-            <meta property="og:title" content="Nomes de garçom 🍻" />
-            <meta property="og:image" content={process.env.REACT_APP_PUBLIC_URL + og_image} />
-            <meta property="og:url" content={process.env.REACT_APP_PUBLIC_URL} />
-            <link rel="canonical" href={process.env.REACT_APP_PUBLIC_URL}/>
-        </Helmet>
         <Header />
         <main>
             <Phrase phrase={obj.phrase} />

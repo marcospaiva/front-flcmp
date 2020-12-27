@@ -1,6 +1,7 @@
 @import './header.css';
 
-@custom-media --viewport-medium (width <= 50rem);
+@custom-media --viewport-medium (min-width: 64.063em);
+@custom-media --viewport-small (min-width:40.063em);
 
 :root {
     --fontSize: 1.8rem;
@@ -46,7 +47,12 @@ body {
 }
 
 h1 {
-    font-size: 6rem;
+    font-size: 13vw;
+
+    @media(--viewport-small) {
+        font-size: 9vw;
+    }
+    hyphens: auto;
     font-weight: 900;
     line-height: 1;
     margin:0 var(--baseline);
@@ -92,15 +98,24 @@ h4 {
     text-align: left;
     position: absolute;
     display: block;
+    font-size: 35vw;
+
+    @media(--viewport-small) {
+        font-size: 10rem;
+    }
 }
 
 @for $i from 1 to 8 {
     .toRepeat-$i {
-        transform: rotateZ(math(-15)deg);
-        top: math(10 * $(i))rem;
         left: -30px;
-        font-size: 10rem;
-        text-indent: -math(random() * 5 * $(i))rem;
+        transform: rotateZ(math(-15)deg);
+        top: math(35 * $(i))vw;
+        text-indent: -math(floor(random() * 10) * $(i))rem;
+
+        @media(--viewport-small) {
+            top: math(10 * $(i))rem;
+            text-indent: -math(floor(random() * 7) * $(i))rem;
+        }
     }
 }
 
